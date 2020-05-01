@@ -1,0 +1,18 @@
+import time
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import WebDriverWait
+
+driver = webdriver.Chrome("C:/Users/RJ_2/Desktop/LinkedIn Learning/Python/chromedriver_win32/chromedriver")
+driver.get('http://www.google.com/')
+time.sleep(5) 
+
+# Find Google Home page search box
+search_box = driver.find_element_by_name('q')
+
+# Insert search criteria and submit 
+search_box.send_keys('maui hotel')
+search_box.submit()
+time.sleep(5) 
+
+driver.quit()
